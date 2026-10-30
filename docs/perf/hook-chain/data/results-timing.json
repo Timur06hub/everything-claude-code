@@ -1,0 +1,644 @@
+{
+  "N": 30,
+  "WARM": 3,
+  "load0": [
+    0.4,
+    0.18,
+    0.1
+  ],
+  "load1": [
+    1.04,
+    0.45,
+    0.21
+  ],
+  "cpus": 4,
+  "node": "v22.22.0",
+  "out": [
+    {
+      "name": "bare node (direct, no shell)",
+      "group": "baseline",
+      "n": 30,
+      "median": 29.054276,
+      "mean": 30.355936499999995,
+      "min": 24.587334,
+      "max": 39.512601,
+      "sd": 4.572764005988091,
+      "p90": 36.410917,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "bare node (via sh -c)",
+      "group": "baseline",
+      "n": 30,
+      "median": 30.377765500000002,
+      "mean": 31.465081166666668,
+      "min": 26.067457,
+      "max": 38.161027,
+      "sd": 3.8367966405010314,
+      "p90": 36.997511,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "pre-bash-dispatcher | FULL enabled",
+      "group": "full",
+      "hook": "pre-bash-dispatcher",
+      "state": "enabled",
+      "type": "B",
+      "n": 30,
+      "median": 128.878391,
+      "mean": 127.42690616666667,
+      "min": 107.991788,
+      "max": 152.573171,
+      "sd": 11.913550106254553,
+      "p90": 143.534083,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "pre-bash-dispatcher | FULL disabled",
+      "group": "full",
+      "hook": "pre-bash-dispatcher",
+      "state": "disabled",
+      "type": "B",
+      "n": 30,
+      "median": 118.2003145,
+      "mean": 116.20677233333335,
+      "min": 99.017202,
+      "max": 138.053142,
+      "sd": 9.623424193579172,
+      "p90": 127.572844,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "pre-bash-dispatcher | L3 bootstrap->script enabled",
+      "group": "layer",
+      "hook": "pre-bash-dispatcher",
+      "state": "enabled",
+      "n": 30,
+      "median": 119.1084795,
+      "mean": 121.66807116666665,
+      "min": 101.461197,
+      "max": 169.894982,
+      "sd": 15.996397771105539,
+      "p90": 139.411259,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "pre-bash-dispatcher | L3 bootstrap->script disabled",
+      "group": "layer",
+      "hook": "pre-bash-dispatcher",
+      "state": "disabled",
+      "n": 30,
+      "median": 111.95734,
+      "mean": 113.41242319999999,
+      "min": 96.434312,
+      "max": 147.512284,
+      "sd": 13.286561462089736,
+      "p90": 130.461463,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "pre-bash-dispatcher | L1 script direct enabled",
+      "group": "layer",
+      "hook": "pre-bash-dispatcher",
+      "state": "enabled",
+      "n": 30,
+      "median": 66.2944275,
+      "mean": 70.19030103333333,
+      "min": 54.199876,
+      "max": 94.374519,
+      "sd": 11.287619387425533,
+      "p90": 83.441141,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "pre-bash-dispatcher | L1 script direct disabled",
+      "group": "layer",
+      "hook": "pre-bash-dispatcher",
+      "state": "disabled",
+      "n": 30,
+      "median": 56.5423805,
+      "mean": 59.46022356666668,
+      "min": 50.219157,
+      "max": 80.470511,
+      "sd": 8.856884720235229,
+      "p90": 74.043329,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "doc-file-warning | FULL enabled",
+      "group": "full",
+      "hook": "doc-file-warning",
+      "state": "enabled",
+      "type": "A",
+      "n": 30,
+      "median": 99.336218,
+      "mean": 99.70121719999999,
+      "min": 84.427332,
+      "max": 113.840401,
+      "sd": 7.967337099081423,
+      "p90": 111.030174,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 380,
+        "stderrHead": "",
+        "stdoutHead": "{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"additionalContext\":\"[Hook] WARNING: Ad-hoc docu"
+      }
+    },
+    {
+      "name": "doc-file-warning | FULL disabled",
+      "group": "full",
+      "hook": "doc-file-warning",
+      "state": "disabled",
+      "type": "A",
+      "n": 30,
+      "median": 103.04494600000001,
+      "mean": 101.81240416666667,
+      "min": 82.364531,
+      "max": 121.546978,
+      "sd": 11.161627345460179,
+      "p90": 116.155183,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "doc-file-warning | L3 bootstrap->rwf enabled",
+      "group": "layer",
+      "hook": "doc-file-warning",
+      "state": "enabled",
+      "n": 30,
+      "median": 99.116844,
+      "mean": 98.35356866666666,
+      "min": 82.899801,
+      "max": 125.415357,
+      "sd": 10.527119502679447,
+      "p90": 109.182091,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 380,
+        "stderrHead": "",
+        "stdoutHead": "{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"additionalContext\":\"[Hook] WARNING: Ad-hoc docu"
+      }
+    },
+    {
+      "name": "doc-file-warning | L3 bootstrap->rwf disabled",
+      "group": "layer",
+      "hook": "doc-file-warning",
+      "state": "disabled",
+      "n": 30,
+      "median": 91.161807,
+      "mean": 94.53354389999998,
+      "min": 80.166992,
+      "max": 124.600857,
+      "sd": 12.644079515138124,
+      "p90": 111.746104,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "doc-file-warning | L2 run-with-flags enabled",
+      "group": "layer",
+      "hook": "doc-file-warning",
+      "state": "enabled",
+      "n": 30,
+      "median": 41.2065295,
+      "mean": 44.20854003333333,
+      "min": 35.336066,
+      "max": 58.809407,
+      "sd": 7.191372662995257,
+      "p90": 55.28591,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 380,
+        "stderrHead": "",
+        "stdoutHead": "{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"additionalContext\":\"[Hook] WARNING: Ad-hoc docu"
+      }
+    },
+    {
+      "name": "doc-file-warning | L2 run-with-flags disabled",
+      "group": "layer",
+      "hook": "doc-file-warning",
+      "state": "disabled",
+      "n": 30,
+      "median": 41.277678,
+      "mean": 43.63336550000001,
+      "min": 35.06992,
+      "max": 56.595553,
+      "sd": 7.400156452989938,
+      "p90": 54.198954,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "gateguard-edit | FULL enabled",
+      "group": "full",
+      "hook": "gateguard-edit",
+      "state": "enabled",
+      "type": "A",
+      "n": 30,
+      "median": 112.14495099999999,
+      "mean": 114.59932646666667,
+      "min": 97.157487,
+      "max": 139.575723,
+      "sd": 12.54408564335775,
+      "p90": 131.098948,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook returned raw input as stdout; emitting empty to avoid transcript bloat ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "gateguard-edit | FULL disabled",
+      "group": "full",
+      "hook": "gateguard-edit",
+      "state": "disabled",
+      "type": "A",
+      "n": 30,
+      "median": 93.457912,
+      "mean": 95.6363904,
+      "min": 83.907964,
+      "max": 124.98599,
+      "sd": 10.041532512272687,
+      "p90": 105.318812,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "gateguard-edit | L3 bootstrap->rwf enabled",
+      "group": "layer",
+      "hook": "gateguard-edit",
+      "state": "enabled",
+      "n": 30,
+      "median": 107.3952675,
+      "mean": 112.41541013333334,
+      "min": 92.210096,
+      "max": 147.485736,
+      "sd": 14.825957842841108,
+      "p90": 136.200225,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook returned raw input as stdout; emitting empty to avoid transcript bloat ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "gateguard-edit | L3 bootstrap->rwf disabled",
+      "group": "layer",
+      "hook": "gateguard-edit",
+      "state": "disabled",
+      "n": 30,
+      "median": 95.6063545,
+      "mean": 95.85006966666667,
+      "min": 79.898923,
+      "max": 126.167324,
+      "sd": 11.681541234742483,
+      "p90": 107.624117,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "gateguard-edit | L2 run-with-flags enabled",
+      "group": "layer",
+      "hook": "gateguard-edit",
+      "state": "enabled",
+      "n": 30,
+      "median": 58.7273365,
+      "mean": 60.27448393333332,
+      "min": 49.55146,
+      "max": 103.377657,
+      "sd": 10.403336582023218,
+      "p90": 70.060317,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 572,
+        "stderrHead": "",
+        "stdoutHead": "{\"session_id\":\"bench-session\",\"transcript_path\":\"<hookbench>"
+      }
+    },
+    {
+      "name": "gateguard-edit | L2 run-with-flags disabled",
+      "group": "layer",
+      "hook": "gateguard-edit",
+      "state": "disabled",
+      "n": 30,
+      "median": 40.5351155,
+      "mean": 41.883324,
+      "min": 34.46291,
+      "max": 54.990854,
+      "sd": 6.222744986851902,
+      "p90": 51.722397,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "hookify-runtime-pre | FULL enabled",
+      "group": "full",
+      "hook": "hookify-runtime-pre",
+      "state": "enabled",
+      "type": "A",
+      "n": 30,
+      "median": 100.465873,
+      "mean": 105.39704316666668,
+      "min": 90.60797,
+      "max": 138.979553,
+      "sd": 12.934645430312006,
+      "p90": 121.229574,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook returned raw input as stdout; emitting empty to avoid transcript bloat ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "hookify-runtime-pre | FULL disabled",
+      "group": "full",
+      "hook": "hookify-runtime-pre",
+      "state": "disabled",
+      "type": "A",
+      "n": 30,
+      "median": 95.295942,
+      "mean": 97.24428649999999,
+      "min": 78.348455,
+      "max": 123.258195,
+      "sd": 11.896316573967626,
+      "p90": 113.632742,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "observe-pre (async) | FULL enabled",
+      "group": "full",
+      "hook": "observe-pre (async)",
+      "state": "enabled",
+      "type": "A",
+      "n": 30,
+      "median": 433.5710575,
+      "mean": 439.1553988666667,
+      "min": 383.618844,
+      "max": 490.489281,
+      "sd": 27.59174368956611,
+      "p90": 478.33297,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "observe-pre (async) | FULL disabled",
+      "group": "full",
+      "hook": "observe-pre (async)",
+      "state": "disabled",
+      "type": "A",
+      "n": 30,
+      "median": 99.5850685,
+      "mean": 99.52248993333335,
+      "min": 81.664503,
+      "max": 130.642717,
+      "sd": 12.889601701007408,
+      "p90": 114.115517,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "[Hook] bootstrap: hook produced no output; emitting empty stdout ",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "posttooluse-dispatcher | FULL enabled",
+      "group": "full",
+      "hook": "posttooluse-dispatcher",
+      "state": "enabled",
+      "type": "C",
+      "n": 30,
+      "median": 108.69248350000001,
+      "mean": 118.67656396666668,
+      "min": 91.839461,
+      "max": 395.124846,
+      "sd": 53.654398517594274,
+      "p90": 124.837832,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "posttooluse-dispatcher | FULL disabled",
+      "group": "full",
+      "hook": "posttooluse-dispatcher",
+      "state": "disabled",
+      "type": "C",
+      "n": 30,
+      "median": 70.9647985,
+      "mean": 73.93723143333334,
+      "min": 62.460713,
+      "max": 102.381583,
+      "sd": 9.806654598096626,
+      "p90": 90.720673,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "stop-check-console-log | FULL enabled",
+      "group": "full",
+      "hook": "stop-check-console-log",
+      "state": "enabled",
+      "type": "D",
+      "n": 30,
+      "median": 166.8264025,
+      "mean": 167.62096910000002,
+      "min": 145.854463,
+      "max": 213.24694,
+      "sd": 14.96997576532204,
+      "p90": 181.910651,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "",
+        "stdoutHead": ""
+      }
+    },
+    {
+      "name": "stop-check-console-log | FULL disabled",
+      "group": "full",
+      "hook": "stop-check-console-log",
+      "state": "disabled",
+      "type": "D",
+      "n": 30,
+      "median": 94.89276849999999,
+      "mean": 94.7033085,
+      "min": 79.01651,
+      "max": 120.181418,
+      "sd": 10.381008926866508,
+      "p90": 106.348128,
+      "exit": {
+        "0": 30
+      },
+      "timeouts": 0,
+      "sample": {
+        "stdoutBytes": 0,
+        "stderrHead": "",
+        "stdoutHead": ""
+      }
+    }
+  ]
+}

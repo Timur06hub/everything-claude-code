@@ -1,0 +1,18 @@
+{
+  "inside": [
+    "/dev/null",
+    "<hookbench>/sandbox/home/.local/share/ecc-homunculus/projects/d4da62a0751d/.project.json.tmp.dmmoqhqq",
+    "<hookbench>/sandbox/home/.local/share/ecc-homunculus/projects/d4da62a0751d/project.json",
+    "<hookbench>/sandbox/home/.local/share/ecc-homunculus/.projects.json.tmp.9u4rami4",
+    "<hookbench>/sandbox/home/.local/share/ecc-homunculus/projects.json",
+    "<hookbench>/sandbox/home/.local/share/ecc-homunculus/projects/d4da62a0751d/observations.jsonl",
+    "<hookbench>/sandbox/home/.local/share/ecc-homunculus/projects/d4da62a0751d/.observer-last-activity",
+    "<hookbench>/sandbox/home/.local/share/ecc-homunculus/projects/d4da62a0751d/.observer-signal-counter.lock.v2",
+    "<hookbench>/sandbox/home/.local/share/ecc-homunculus/projects/d4da62a0751d/.observer-signal-counter",
+    "<hookbench>/sandbox/home/.claude/metrics/tool-usage.jsonl",
+    "<hookbench>/sandbox/tmp/ecc-metrics-bench-session.json.10006.10d82b3c.tmp",
+    "<hookbench>/sandbox/tmp/ecc-metrics-bench-session.json"
+  ],
+  "outside": [],
+  "nets": []
+}

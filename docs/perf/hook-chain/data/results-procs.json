@@ -1,0 +1,602 @@
+[
+  {
+    "name": "bare node (direct, no shell)",
+    "group": "baseline",
+    "nodeProcs": [
+      1,
+      1,
+      1
+    ],
+    "allExecs": [
+      1,
+      1,
+      1
+    ],
+    "stable": true,
+    "chain": [
+      "node -e <inline resolver+bootstrap>"
+    ]
+  },
+  {
+    "name": "bare node (via sh -c)",
+    "group": "baseline",
+    "nodeProcs": [
+      1,
+      1,
+      1
+    ],
+    "allExecs": [
+      2,
+      2,
+      2
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>"
+    ]
+  },
+  {
+    "name": "pre-bash-dispatcher | FULL enabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/pre-bash-dispatcher.js"
+    ]
+  },
+  {
+    "name": "pre-bash-dispatcher | FULL disabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/pre-bash-dispatcher.js"
+    ]
+  },
+  {
+    "name": "pre-bash-dispatcher | L3 bootstrap->script enabled",
+    "group": "layer",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/plugin-hook-bootstrap.js node scripts/hooks/pre-bash-dispatcher.js",
+      "node scripts/hooks/pre-bash-dispatcher.js"
+    ]
+  },
+  {
+    "name": "pre-bash-dispatcher | L3 bootstrap->script disabled",
+    "group": "layer",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/plugin-hook-bootstrap.js node scripts/hooks/pre-bash-dispatcher.js",
+      "node scripts/hooks/pre-bash-dispatcher.js"
+    ]
+  },
+  {
+    "name": "pre-bash-dispatcher | L1 script direct enabled",
+    "group": "layer",
+    "nodeProcs": [
+      1,
+      1,
+      1
+    ],
+    "allExecs": [
+      2,
+      2,
+      2
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/pre-bash-dispatcher.js"
+    ]
+  },
+  {
+    "name": "pre-bash-dispatcher | L1 script direct disabled",
+    "group": "layer",
+    "nodeProcs": [
+      1,
+      1,
+      1
+    ],
+    "allExecs": [
+      2,
+      2,
+      2
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/pre-bash-dispatcher.js"
+    ]
+  },
+  {
+    "name": "doc-file-warning | FULL enabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/run-with-flags.js pre:write:doc-file-warning scripts/hooks/doc-file-warning.js standard,strict"
+    ]
+  },
+  {
+    "name": "doc-file-warning | FULL disabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/run-with-flags.js pre:write:doc-file-warning scripts/hooks/doc-file-warning.js standard,strict"
+    ]
+  },
+  {
+    "name": "doc-file-warning | L3 bootstrap->rwf enabled",
+    "group": "layer",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/plugin-hook-bootstrap.js node scripts/hooks/run-with-flags.js pre:write:doc-file-warning scripts",
+      "node scripts/hooks/run-with-flags.js pre:write:doc-file-warning scripts/hooks/doc-file-warning.js standard,strict"
+    ]
+  },
+  {
+    "name": "doc-file-warning | L3 bootstrap->rwf disabled",
+    "group": "layer",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/plugin-hook-bootstrap.js node scripts/hooks/run-with-flags.js pre:write:doc-file-warning scripts",
+      "node scripts/hooks/run-with-flags.js pre:write:doc-file-warning scripts/hooks/doc-file-warning.js standard,strict"
+    ]
+  },
+  {
+    "name": "doc-file-warning | L2 run-with-flags enabled",
+    "group": "layer",
+    "nodeProcs": [
+      1,
+      1,
+      1
+    ],
+    "allExecs": [
+      2,
+      2,
+      2
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/run-with-flags.js pre:write:doc-file-warning scripts/hooks/doc-file-warning.js standard,strict"
+    ]
+  },
+  {
+    "name": "doc-file-warning | L2 run-with-flags disabled",
+    "group": "layer",
+    "nodeProcs": [
+      1,
+      1,
+      1
+    ],
+    "allExecs": [
+      2,
+      2,
+      2
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/run-with-flags.js pre:write:doc-file-warning scripts/hooks/doc-file-warning.js standard,strict"
+    ]
+  },
+  {
+    "name": "gateguard-edit | FULL enabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/run-with-flags.js pre:edit-write:gateguard-fact-force scripts/hooks/gateguard-fact-force.js stan"
+    ]
+  },
+  {
+    "name": "gateguard-edit | FULL disabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/run-with-flags.js pre:edit-write:gateguard-fact-force scripts/hooks/gateguard-fact-force.js stan"
+    ]
+  },
+  {
+    "name": "gateguard-edit | L3 bootstrap->rwf enabled",
+    "group": "layer",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/plugin-hook-bootstrap.js node scripts/hooks/run-with-flags.js pre:edit-write:gateguard-fact-forc",
+      "node scripts/hooks/run-with-flags.js pre:edit-write:gateguard-fact-force scripts/hooks/gateguard-fact-force.js stan"
+    ]
+  },
+  {
+    "name": "gateguard-edit | L3 bootstrap->rwf disabled",
+    "group": "layer",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/plugin-hook-bootstrap.js node scripts/hooks/run-with-flags.js pre:edit-write:gateguard-fact-forc",
+      "node scripts/hooks/run-with-flags.js pre:edit-write:gateguard-fact-force scripts/hooks/gateguard-fact-force.js stan"
+    ]
+  },
+  {
+    "name": "gateguard-edit | L2 run-with-flags enabled",
+    "group": "layer",
+    "nodeProcs": [
+      1,
+      1,
+      1
+    ],
+    "allExecs": [
+      2,
+      2,
+      2
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/run-with-flags.js pre:edit-write:gateguard-fact-force scripts/hooks/gateguard-fact-force.js stan"
+    ]
+  },
+  {
+    "name": "gateguard-edit | L2 run-with-flags disabled",
+    "group": "layer",
+    "nodeProcs": [
+      1,
+      1,
+      1
+    ],
+    "allExecs": [
+      2,
+      2,
+      2
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node scripts/hooks/run-with-flags.js pre:edit-write:gateguard-fact-force scripts/hooks/gateguard-fact-force.js stan"
+    ]
+  },
+  {
+    "name": "hookify-runtime-pre | FULL enabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      4,
+      4,
+      4
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/run-with-flags.js pre:hookify-runtime scripts/hooks/hookify-runtime.js minimal,standard,strict",
+      "git"
+    ]
+  },
+  {
+    "name": "hookify-runtime-pre | FULL disabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/run-with-flags.js pre:hookify-runtime scripts/hooks/hookify-runtime.js minimal,standard,strict"
+    ]
+  },
+  {
+    "name": "observe-pre (async) | FULL enabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      38,
+      40,
+      38
+    ],
+    "stable": false,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/run-with-flags.js pre:observe scripts/hooks/observe-runner.js standard,strict",
+      "bash (wrapper)",
+      "bash (wrapper)",
+      "cat",
+      "readlink",
+      "python3",
+      "git",
+      "dirname",
+      "python3",
+      "dirname",
+      "dirname",
+      "git",
+      "sed",
+      "basename",
+      "git",
+      "git",
+      "python3",
+      "mkdir",
+      "mkdir",
+      "mkdir",
+      "mkdir",
+      "mkdir",
+      "mkdir",
+      "dirname",
+      "mkdir",
+      "python3",
+      "find",
+      "touch",
+      "python3",
+      "python3",
+      "date",
+      "python3",
+      "python3",
+      "touch",
+      "flock",
+      "flock"
+    ]
+  },
+  {
+    "name": "observe-pre (async) | FULL disabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/run-with-flags.js pre:observe scripts/hooks/observe-runner.js standard,strict"
+    ]
+  },
+  {
+    "name": "posttooluse-dispatcher | FULL enabled",
+    "group": "full",
+    "nodeProcs": [
+      1,
+      1,
+      1
+    ],
+    "allExecs": [
+      8,
+      8,
+      8
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "git",
+      "git",
+      "git",
+      "git",
+      "git",
+      "git"
+    ]
+  },
+  {
+    "name": "posttooluse-dispatcher | FULL disabled",
+    "group": "full",
+    "nodeProcs": [
+      1,
+      1,
+      1
+    ],
+    "allExecs": [
+      2,
+      2,
+      2
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>"
+    ]
+  },
+  {
+    "name": "stop-check-console-log | FULL enabled",
+    "group": "full",
+    "nodeProcs": [
+      3,
+      3,
+      3
+    ],
+    "allExecs": [
+      12,
+      12,
+      12
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/run-with-flags.js stop:check-console-log scripts/hooks/check-console-log.js standard,strict",
+      "node scripts/hooks/check-console-log.js",
+      "sh (wrapper)",
+      "git",
+      "sh (wrapper)",
+      "git",
+      "sh (wrapper)",
+      "git",
+      "sh (wrapper)",
+      "git"
+    ]
+  },
+  {
+    "name": "stop-check-console-log | FULL disabled",
+    "group": "full",
+    "nodeProcs": [
+      2,
+      2,
+      2
+    ],
+    "allExecs": [
+      3,
+      3,
+      3
+    ],
+    "stable": true,
+    "chain": [
+      "sh (wrapper)",
+      "node -e <inline resolver+bootstrap>",
+      "node scripts/hooks/run-with-flags.js stop:check-console-log scripts/hooks/check-console-log.js standard,strict"
+    ]
+  }
+]
