@@ -1,0 +1,13 @@
+/* Archival film FX layers. All layers are pointer-events:none overlays. */
+.fx-root{position:relative;overflow:hidden;isolation:isolate}
+.fx-layer{position:absolute;inset:0;pointer-events:none}
+.fx-grade{
+  backdrop-filter:sepia(.8) saturate(.8) contrast(1.1) brightness(.85);
+  -webkit-backdrop-filter:sepia(.8) saturate(.8) contrast(1.1) brightness(.85);
+  background:linear-gradient(rgba(150,100,50,.35),rgba(50,28,10,.35));
+  mix-blend-mode:multiply}
+.fx-leak{mix-blend-mode:screen;filter:blur(20px)}
+.fx-grain{background-size:256px 256px;mix-blend-mode:overlay;opacity:.55}
+.fx-vignette{background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,0) 38%,rgba(0,0,0,.45) 72%,rgba(4,2,0,.92) 100%)}
+.fx-flicker{background:#000;opacity:0}
+.fx-svg{width:100%;height:100%}

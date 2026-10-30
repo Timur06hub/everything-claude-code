@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>FX demo</title>
+<link rel="stylesheet" href="fx.css">
+<style>
+html,body{margin:0;background:#000;height:100%}
+#stage{width:100vw;height:100vh;background:linear-gradient(#8fb4d8 0 45%,#6d8a5a 45% 60%,#9a7b52 60%)}
+#stage .t{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font:700 6vw Georgia,serif;color:#f4ead8;letter-spacing:.1em;text-shadow:0 2px 8px #000}
+</style></head><body>
+<div id="stage"><div class="t">BOSTON 1919</div></div>
+<script src="fx.js"></script>
+<script>
+FX.init(document.getElementById('stage'));
+var q = new URLSearchParams(location.search);
+if (q.has('t')) FX.update(parseFloat(q.get('t')));
+else { var t0 = performance.now(); (function loop(){ FX.update((performance.now()-t0)/1000); requestAnimationFrame(loop); })(); }
+</script></body></html>

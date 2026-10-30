@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>05-the-wave</title>
+<style>
+  html,body{margin:0;background:#000;overflow:hidden}
+  #stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:#07090c;transform-origin:0 0}
+  .layer{position:absolute;left:-120px;top:-80px;width:2160px;height:1240px;will-change:transform}
+  #bg{background:linear-gradient(180deg,#10151c 0%,#0a0d12 60%,#050608 100%)}
+  #mid{background:linear-gradient(90deg,transparent 0 12%,#141a22 12% 30%,transparent 30% 48%,#121820 48% 70%,transparent 70% 84%,#161d26 84% 100%);clip-path:polygon(0 55%,100% 45%,100% 100%,0 100%)}
+  #fg{background:linear-gradient(180deg,transparent 70%,#020304 100%);clip-path:polygon(0 78%,100% 70%,100% 100%,0 100%)}
+  #vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.65) 100%)}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="layer" id="bg"></div>
+  <div class="layer" id="mid"></div>
+  <div class="layer" id="fg"></div>
+  <div id="vignette"></div>
+</div>
+<script src="../shared/camera/camera.js"></script>
+<script>
+  // Placeholder scene: backdrop only, no content. Replace the move spec per shot.
+  var MOVE = { type: 'drift', duration: 12, ease: 'easeInOutSine', drift: { seed: 5, amp: 5, rot: 0.12, freq: 0.3 } };
+  var layers = [
+    { el: document.getElementById('bg'),  depth: 0.1 },
+    { el: document.getElementById('mid'), depth: 0.5 },
+    { el: document.getElementById('fg'),  depth: 0.9 }
+  ];
+  window.__setTime = function (seconds) { Camera.apply(layers, seconds, MOVE); };
+  window.__setTime(0);
+</script>
+</body>
+</html>
