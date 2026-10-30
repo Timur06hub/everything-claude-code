@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><title>TypeKit demo</title>
+<link rel="stylesheet" href="../../src/shared/type/type.css">
+<style>body{margin:0;background:#888}.tk-stage{margin:0}.row{display:grid;grid-template-columns:repeat(2,1280px);gap:0}</style>
+<div class="row">
+  <div class="tk-stage" id="a"></div><div class="tk-stage" id="b"></div>
+  <div class="tk-stage" id="c"><div class="tk-fill" id="c1" style="background:#cfd3d8"></div><div class="tk-fill" id="c2"></div></div>
+  <div class="tk-stage" id="d"></div>
+</div>
+<script src="../../src/shared/type/type.js"></script>
+<script>
+var P={
+ title:{kicker:'KICKER PLACEHOLDER',title:'TITLE PLACEHOLDER GOES HERE',subtitle:'Subtitle placeholder text',duration:5},
+ date:{month:'MONTH',day:'00',year:'0000',label:'DATE LABEL PLACEHOLDER',duration:4},
+ lt:{name:'NAME PLACEHOLDER',role:'Role placeholder line',duration:4},
+ news:{masthead:'The Masthead Placeholder',edition:'EDITION PLACEHOLDER',price:'PRICE',headline:'HEADLINE PLACEHOLDER LINE TWO PLACEHOLDER',deck:'Deck placeholder text, clearly fake.',duration:5}};
+function setTime(t){
+  TypeKit.titleCard(a,P.title,t);TypeKit.dateStamp(b,P.date,t);
+  TypeKit.lowerThird(c2,P.lt,t);TypeKit.headlineCard(d,P.news,t);
+}
+var q=new URLSearchParams(location.search).get('t');
+setTime(q==null?2.5:parseFloat(q));
+window.setTime=setTime;
+</script>
