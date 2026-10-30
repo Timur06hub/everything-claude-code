@@ -1,0 +1,44 @@
+{
+  "_note": "FAKE PLACEHOLDER DATA. Not real geography. Replace with your own config.",
+  "width": 1280, "height": 720,
+  "theme": "paper",
+  "title": "PLACEHOLDER MAP",
+  "subtitle": "FAKE GRID - NOT A REAL PLACE",
+  "water": { "label": "WATER BODY", "polygon": [[0,520],[180,560],[360,540],[520,600],[700,590],[860,650],[1280,640],[1280,720],[0,720]] },
+  "parks": [
+    { "label": "PARK A", "rect": [820,120,160,110] },
+    { "label": "PARK B", "rect": [200,300,120,90] }
+  ],
+  "streets": [
+    { "id": "s1", "label": "STREET 1", "weight": 3, "points": [[60,100],[1220,100]] },
+    { "id": "s2", "label": "STREET 2", "weight": 2, "points": [[60,230],[1220,240]] },
+    { "id": "s3", "label": "STREET 3", "weight": 2, "points": [[60,370],[1220,360]] },
+    { "id": "s4", "label": "STREET 4", "weight": 2, "points": [[60,480],[700,490],[1220,470]] },
+    { "id": "a1", "label": "AVENUE A", "weight": 3, "points": [[160,60],[170,520]] },
+    { "id": "a2", "label": "AVENUE B", "weight": 2, "points": [[400,60],[410,540]] },
+    { "id": "a3", "label": "AVENUE C", "weight": 2, "points": [[640,60],[650,580]] },
+    { "id": "a4", "label": "AVENUE D", "weight": 3, "points": [[880,60],[900,610]] },
+    { "id": "a5", "label": "AVENUE E", "weight": 2, "points": [[1100,60],[1110,630]] },
+    { "id": "d1", "label": "DIAGONAL 1", "weight": 2, "points": [[160,480],[400,370],[640,230],[880,100]] }
+  ],
+  "labels": [
+    { "text": "DISTRICT X", "x": 280, "y": 170, "size": 22, "spacing": 8, "style": "district" },
+    { "text": "DISTRICT Y", "x": 760, "y": 300, "size": 22, "spacing": 8, "style": "district" },
+    { "text": "DISTRICT Z", "x": 1000, "y": 430, "size": 22, "spacing": 8, "style": "district" }
+  ],
+  "routes": [
+    { "id": "r1", "label": "ROUTE 1", "start": 1.0, "duration": 5.0,
+      "points": [[170,100],[410,100],[410,240],[650,240],[650,360],[900,360],[900,480]] }
+  ],
+  "markers": [
+    { "id": "m1", "label": "LABEL A", "x": 170, "y": 100, "start": 0.5 },
+    { "id": "m2", "label": "LABEL B", "x": 650, "y": 240, "start": 3.0 },
+    { "id": "m3", "label": "LABEL C", "x": 900, "y": 480, "start": 6.0, "radius": 14 }
+  ],
+  "camera": [
+    { "t": 0,  "x": 640, "y": 360, "zoom": 1.0 },
+    { "t": 4,  "x": 420, "y": 220, "zoom": 1.5 },
+    { "t": 9,  "x": 800, "y": 400, "zoom": 1.7 },
+    { "t": 12, "x": 640, "y": 360, "zoom": 1.0 }
+  ]
+}
